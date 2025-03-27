@@ -1,23 +1,50 @@
 import pandas as pd
 import numpy as np
+from datetime import datetime, timedelta
 
 # Initialize player ELO ratings
 INITIAL_ELO = 1500
 K_BASE = 30  # Base K-factor
+DECAY_RATE = 0.1  # Rating decay per day
+DECAY_THRESHOLD = 10  # Days before decay starts
 
 class PokerELO:
     def __init__(self, players):
         self.elo_ratings = {player: INITIAL_ELO for player in players}
+        self.last_played = {player: None for player in players}  # Track last play date for each player
 
     def expected_score(self, Ra, Rb):
         """Calculate expected probability of winning."""
         return 1 / (1 + 10 ** ((Rb - Ra) / 400))
 
-    def update_elo(self, session_results):
+    def apply_decay(self, current_date):
+        """Apply rating decay based on inactivity."""
+        for player in self.elo_ratings:
+            if self.last_played[player] is not None:
+                days_inactive = (current_date - self.last_played[player]).days
+                if days_inactive > DECAY_THRESHOLD:
+                    # Calculate decay based on days inactive
+                    decay_days = days_inactive - DECAY_THRESHOLD
+                    decay_amount = DECAY_RATE * decay_days
+
+                    # Apply decay (reduce rating)
+                    self.elo_ratings[player] -= decay_amount
+
+                    # Ensure rating doesn't go below 1000
+                    self.elo_ratings[player] = max(1000, self.elo_ratings[player])
+
+    def update_elo(self, session_results, session_date=None):
         """
         Update ELO based on a session result.
         session_results: dict of {player_name: net_profit}
+        session_date: datetime object for the session date
         """
+        if session_date is None:
+            session_date = datetime.now()
+
+        # Apply decay before updating ratings
+        self.apply_decay(session_date)
+
         players = list(session_results.keys())
         profits = np.array(list(session_results.values()))
 
@@ -42,24 +69,29 @@ class PokerELO:
                 self.elo_ratings[A] += K * (Sa - Ea)
                 self.elo_ratings[B] += K * (Sb - Eb)
 
+        # Update last played dates for all players in the session
+        for player in players:
+            self.last_played[player] = session_date
+
     def get_rankings(self):
         """Return rankings sorted by ELO."""
         return sorted(self.elo_ratings.items(), key=lambda x: x[1], reverse=True)
 
 # Example Usage:
-players = ["A", "B", "C", "D"]
-elo_system = PokerELO(players)
+if __name__ == "__main__":
+    players = ["A", "B", "C", "D"]
+    elo_system = PokerELO(players)
 
-# Session 1
-session_1 = {"A": 10, "B": 5, "C": -15}
-elo_system.update_elo(session_1)
+    # Session 1
+    session_1 = {"A": 10, "B": 5, "C": -15}
+    elo_system.update_elo(session_1, datetime.now() - timedelta(days=60))
 
-# Session 2
-session_2 = {"A": -30, "B": 20, "D": 10}
-elo_system.update_elo(session_2)
+    # Session 2 (30 days later)
+    session_2 = {"A": -30, "B": 20, "D": 10}
+    elo_system.update_elo(session_2, datetime.now() - timedelta(days=30))
 
-# Get rankings
-rankings = elo_system.get_rankings()
-print("Poker ELO Rankings:")
-for rank, (player, rating) in enumerate(rankings, 1):
-    print(f"{rank}. {player}: {round(rating, 2)}")
+    # Get rankings
+    rankings = elo_system.get_rankings()
+    print("Poker ELO Rankings:")
+    for rank, (player, rating) in enumerate(rankings, 1):
+        print(f"{rank}. {player}: {round(rating, 2)}")

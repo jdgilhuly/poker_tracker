@@ -76,8 +76,8 @@ def process_poker_sessions(df):
         if len(session_results) < 2:
             continue
 
-        # Update ELO ratings
-        elo_system.update_elo(session_results)
+        # Update ELO ratings with session date
+        elo_system.update_elo(session_results, date)
 
         # Store current ELO ratings with date
         current_ratings = {player: rating for player, rating in elo_system.elo_ratings.items()}
@@ -155,7 +155,7 @@ def save_elo_to_json(elo_system, elo_history_df, output_file='elo_ratings.json')
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Calculate poker ELO ratings from session results')
-    parser.add_argument('--input', '-i', type=str, default='Poker Spreadsheet - Sheet1 (1).csv',
+    parser.add_argument('--input', '-i', type=str, default='Poker Spreadsheet - Sheet1 (2).csv',
                         help='Input CSV file with poker results')
     parser.add_argument('--output-csv', type=str, default='elo_history.csv',
                         help='Output CSV file for ELO history')

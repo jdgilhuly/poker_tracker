@@ -1,20 +1,20 @@
 {
-  "last_updated": "2025-03-17 12:03:41",
+  "last_updated": "2025-03-27 11:57:30",
   "current_ratings": {
-    "Daniel": 1613.0186880872427,
+    "Daniel": 1474.732414300857,
     "Andrew": 1657.8251931761804,
-    "Josh": 1344.7906247814744,
-    "Sean": 1705.3970798058074,
-    "Yahya": 1430.7750761023983,
-    "Owen ": 1383.9184745937946,
+    "Josh": 1599.4568682732943,
+    "Sean": 1537.2418698607808,
+    "Yahya": 1330.0894250906147,
+    "Owen ": 1434.7905481223381,
     "Will": 1284.4245760834415,
-    "Stephan": 1579.8502873696607
+    "Stephan": 1681.4391050924933
   },
   "rankings": [
     {
       "rank": 1,
-      "player": "Sean",
-      "rating": 1705.4
+      "player": "Stephan",
+      "rating": 1681.44
     },
     {
       "rank": 2,
@@ -23,28 +23,28 @@
     },
     {
       "rank": 3,
-      "player": "Daniel",
-      "rating": 1613.02
+      "player": "Josh",
+      "rating": 1599.46
     },
     {
       "rank": 4,
-      "player": "Stephan",
-      "rating": 1579.85
+      "player": "Sean",
+      "rating": 1537.24
     },
     {
       "rank": 5,
-      "player": "Yahya",
-      "rating": 1430.78
+      "player": "Daniel",
+      "rating": 1474.73
     },
     {
       "rank": 6,
       "player": "Owen ",
-      "rating": 1383.92
+      "rating": 1434.79
     },
     {
       "rank": 7,
-      "player": "Josh",
-      "rating": 1344.79
+      "player": "Yahya",
+      "rating": 1330.09
     },
     {
       "rank": 8,
@@ -116,6 +116,19 @@
         "Owen ": 1383.92,
         "Will": 1284.42,
         "Stephan": 1579.85
+      }
+    },
+    {
+      "date": "2025-03-26",
+      "ratings": {
+        "Daniel": 1474.73,
+        "Andrew": 1657.83,
+        "Josh": 1599.46,
+        "Sean": 1537.24,
+        "Yahya": 1330.09,
+        "Owen ": 1434.79,
+        "Will": 1284.42,
+        "Stephan": 1681.44
       }
     }
   ]
