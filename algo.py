@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 # Initialize player ELO ratings
 INITIAL_ELO = 1500
 K_BASE = 30  # Base K-factor
-DECAY_RATE = 0.1  # Rating decay per day
+DECAY_RATE = 2  # Rating decay per day
 DECAY_THRESHOLD = 10  # Days before decay starts
 
 class PokerELO:

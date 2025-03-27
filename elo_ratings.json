@@ -1,55 +1,55 @@
 {
-  "last_updated": "2025-03-27 11:57:30",
+  "last_updated": "2025-03-27 11:58:07",
   "current_ratings": {
-    "Daniel": 1474.732414300857,
-    "Andrew": 1657.8251931761804,
-    "Josh": 1599.4568682732943,
-    "Sean": 1537.2418698607808,
-    "Yahya": 1330.0894250906147,
-    "Owen ": 1434.7905481223381,
-    "Will": 1284.4245760834415,
-    "Stephan": 1681.4391050924933
+    "Daniel": 1474.097326836794,
+    "Andrew": 1657.6484668621345,
+    "Josh": 1598.9846226766672,
+    "Sean": 1537.0133276967697,
+    "Yahya": 1329.8548380473626,
+    "Owen ": 1434.566022352202,
+    "Will": 1284.2359368066986,
+    "Stephan": 1681.199458721372
   },
   "rankings": [
     {
       "rank": 1,
       "player": "Stephan",
-      "rating": 1681.44
+      "rating": 1681.2
     },
     {
       "rank": 2,
       "player": "Andrew",
-      "rating": 1657.83
+      "rating": 1657.65
     },
     {
       "rank": 3,
       "player": "Josh",
-      "rating": 1599.46
+      "rating": 1598.98
     },
     {
       "rank": 4,
       "player": "Sean",
-      "rating": 1537.24
+      "rating": 1537.01
     },
     {
       "rank": 5,
       "player": "Daniel",
-      "rating": 1474.73
+      "rating": 1474.1
     },
     {
       "rank": 6,
       "player": "Owen ",
-      "rating": 1434.79
+      "rating": 1434.57
     },
     {
       "rank": 7,
       "player": "Yahya",
-      "rating": 1330.09
+      "rating": 1329.85
     },
     {
       "rank": 8,
       "player": "Will",
-      "rating": 1284.42
+      "rating": 1284.24
     }
   ],
   "history": [
@@ -82,53 +82,53 @@
     {
       "date": "2025-03-05",
       "ratings": {
-        "Daniel": 1678.48,
-        "Andrew": 1577.46,
+        "Daniel": 1678.47,
+        "Andrew": 1577.39,
         "Josh": 1285.77,
-        "Sean": 1579.09,
+        "Sean": 1579.08,
         "Yahya": 1643.42,
-        "Owen ": 1544.42,
-        "Will": 1322.06,
-        "Stephan": 1369.29
+        "Owen ": 1544.4,
+        "Will": 1322.0,
+        "Stephan": 1369.27
       }
     },
     {
       "date": "2025-03-08",
       "ratings": {
-        "Daniel": 1613.02,
-        "Andrew": 1577.46,
+        "Daniel": 1613.0,
+        "Andrew": 1577.39,
         "Josh": 1285.77,
-        "Sean": 1506.15,
-        "Yahya": 1764.64,
-        "Owen ": 1410.55,
-        "Will": 1322.06,
-        "Stephan": 1520.35
+        "Sean": 1506.13,
+        "Yahya": 1764.63,
+        "Owen ": 1410.54,
+        "Will": 1322.0,
+        "Stephan": 1520.34
       }
     },
     {
       "date": "2025-03-15",
       "ratings": {
-        "Daniel": 1613.02,
-        "Andrew": 1657.83,
-        "Josh": 1344.79,
-        "Sean": 1705.4,
-        "Yahya": 1430.78,
-        "Owen ": 1383.92,
-        "Will": 1284.42,
-        "Stephan": 1579.85
+        "Daniel": 1613.0,
+        "Andrew": 1657.75,
+        "Josh": 1344.29,
+        "Sean": 1705.33,
+        "Yahya": 1430.73,
+        "Owen ": 1383.86,
+        "Will": 1284.34,
+        "Stephan": 1579.79
       }
     },
     {
       "date": "2025-03-26",
       "ratings": {
-        "Daniel": 1474.73,
-        "Andrew": 1657.83,
-        "Josh": 1599.46,
-        "Sean": 1537.24,
-        "Yahya": 1330.09,
-        "Owen ": 1434.79,
-        "Will": 1284.42,
-        "Stephan": 1681.44
+        "Daniel": 1474.1,
+        "Andrew": 1657.65,
+        "Josh": 1598.98,
+        "Sean": 1537.01,
+        "Yahya": 1329.85,
+        "Owen ": 1434.57,
+        "Will": 1284.24,
+        "Stephan": 1681.2
       }
     }
   ]
