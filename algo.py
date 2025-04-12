@@ -5,8 +5,6 @@ from datetime import datetime, timedelta
 # Initialize player ELO ratings
 INITIAL_ELO = 1500
 K_BASE = 30  # Base K-factor
-DECAY_RATE = 2  # Rating decay per day
-DECAY_THRESHOLD = 10  # Days before decay starts
 
 class PokerELO:
     def __init__(self, players):
@@ -17,22 +15,6 @@ class PokerELO:
         """Calculate expected probability of winning."""
         return 1 / (1 + 10 ** ((Rb - Ra) / 400))
 
-    def apply_decay(self, current_date):
-        """Apply rating decay based on inactivity."""
-        for player in self.elo_ratings:
-            if self.last_played[player] is not None:
-                days_inactive = (current_date - self.last_played[player]).days
-                if days_inactive > DECAY_THRESHOLD:
-                    # Calculate decay based on days inactive
-                    decay_days = days_inactive - DECAY_THRESHOLD
-                    decay_amount = DECAY_RATE * decay_days
-
-                    # Apply decay (reduce rating)
-                    self.elo_ratings[player] -= decay_amount
-
-                    # Ensure rating doesn't go below 1000
-                    self.elo_ratings[player] = max(1000, self.elo_ratings[player])
-
     def update_elo(self, session_results, session_date=None):
         """
         Update ELO based on a session result.
@@ -41,9 +23,6 @@ class PokerELO:
         """
         if session_date is None:
             session_date = datetime.now()
-
-        # Apply decay before updating ratings
-        self.apply_decay(session_date)
 
         players = list(session_results.keys())
         profits = np.array(list(session_results.values()))

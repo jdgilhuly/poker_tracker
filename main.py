@@ -155,7 +155,7 @@ def save_elo_to_json(elo_system, elo_history_df, output_file='elo_ratings.json')
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Calculate poker ELO ratings from session results')
-    parser.add_argument('--input', '-i', type=str, default='Poker Spreadsheet - Sheet1 (2).csv',
+    parser.add_argument('--input', '-i', type=str, default='Poker Spreadsheet - Sheet1 (3).csv',
                         help='Input CSV file with poker results')
     parser.add_argument('--output-csv', type=str, default='elo_history.csv',
                         help='Output CSV file for ELO history')
